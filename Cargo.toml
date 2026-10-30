@@ -1,0 +1,18 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/aj199-protocol",
+    "crates/aj199-device",
+    "crates/aj199-cli",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+rust-version = "1.99"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = "symbols"

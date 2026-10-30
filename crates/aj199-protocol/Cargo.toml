@@ -1,0 +1,10 @@
+[package]
+name = "aj199-protocol"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "Байтовый протокол AJAZZ AJ199"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }

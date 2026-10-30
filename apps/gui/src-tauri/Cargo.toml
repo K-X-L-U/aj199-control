@@ -1,0 +1,38 @@
+[package]
+name = "aj199-gui"
+version = "0.1.0"
+edition = "2024"
+description = "AJAZZ AJ199 configurator"
+
+[lib]
+name = "aj199_gui_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon"] }
+tauri-plugin-single-instance = "2"
+tauri-plugin-autostart = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+aj199-protocol = { path = "../../../crates/aj199-protocol" }
+aj199-device = { path = "../../../crates/aj199-device" }
+
+[target.'cfg(windows)'.dependencies]
+windows = { version = "0.62", features = [
+    "Data_Xml_Dom",
+    "UI_Notifications",
+    "Win32_System_Com",
+    "Win32_System_Registry",
+] }
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
+
+[workspace]

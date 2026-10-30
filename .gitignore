@@ -1,0 +1,39 @@
+# Rust / Tauri
+target/
+node_modules/
+dist/
+build/
+.cargo/
+*.rlib
+*.rmeta
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Записи трафика и большие артефакты анализа
+*.pcap
+*.pcapng
+*.pcapng.gz
+*.zip
+*.7z
+
+# Сборки
+*.exe
+*.msi
+*.msix
+*.dll
+*.pdb
+
+# IDE / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Локальные конфиги и бэкапы устройства
+backup_*.json
+local/
